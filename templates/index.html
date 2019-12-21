@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <div class="jumbotron text-center">
+        <h3>Welcome to Recipegram</h3>
+        <p>This blog is for all people that like cooking</p>
+    </div>
+
+
+    <p>
+        {% if request.user.is_authenticated %}
+                It has been loged in. {{request.user.username}}
+        {% else %}
+                It has no been loged in.
+        {% endif %}
+
+
+
+    </p>
+{% comment %} 
+    {% for number in numbers %}
+        <li>{{number}}</li>
+    {% endfor %} {% endcomment %}
+
+
+    
+{% endblock body %}

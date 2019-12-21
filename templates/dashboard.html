@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <h3>Control Panel</h3>
+    <hr>
+    <p>
+        Welcome, <small>{{request.user.username}}</small>
+    </p>
+
+    <hr>
+
+    <a class="btn btn-danger" href="/recipes/addrecipe">Add Recipe</a>
+    <hr>
+    {% if recipes  %}
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                <th scope="col">id</th>
+                <th scope="col">Title</th>
+                <th scope="col">Author</th>
+                <th scope="col">Date</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for recipe in recipes %}
+                    <tr>
+                    <th scope="row">{{recipe.id}}</th>
+                    <td><a href="/recipes/recipe/{{recipe.id}}">{{recipe.title}}</a></td>
+                    <td>{{recipe.author.username}}</td>
+                    <td>{{recipe.created_date}}</td>
+                    <td><a href="/recipes/update/{{recipe.id}}" class = "btn btn-danger">Edit</a></td>
+                    <td><a href="/recipes/delete/{{recipe.id}}" class = "btn btn-danger">Delete</a></td>
+                    </tr>
+
+                {% endfor %}
+
+            </tbody>
+        </table>
+    {% else %}
+        <div class="alert alert-danger">
+            You have no recipe for now.
+        </div>
+    {% endif %}
+
+    
+{% endblock body %}
