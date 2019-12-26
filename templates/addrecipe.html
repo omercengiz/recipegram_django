@@ -1,9 +1,12 @@
 {% extends "layout.html" %}
-
+{% load static %}
 {% block body %}
  
 {% load crispy_forms_tags %}
-    <div class="row">
+
+    <link rel="stylesheet" href="{% static 'css/addrecipe.css' %}">
+
+    <div class="row" id="div_dashboard">
 
         <div class="col-md-10 offset-md-1">
             <h3>Create Recipe</h3>

@@ -1,12 +1,16 @@
 {% extends "layout.html" %}
-
-{% block body %}
+{% load static %}
+{% block body %}    
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <body>
+        
+    </body>
 {% load crispy_forms_tags %}
-    <div class="row">
+    <div class="row" id="loginform">
         <div class="col-md-3 offset-md-3">
             <h3>Login</h3>
             <hr>
-              <form method="post">
+              <form method="post" id="form">
         {% csrf_token %}
         {{ form | crispy }}
         <br>

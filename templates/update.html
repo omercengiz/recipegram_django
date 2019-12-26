@@ -1,9 +1,10 @@
 {% extends "layout.html" %}
-
+{% load static %}
 {% block body %}
  
 {% load crispy_forms_tags %}
-    <div class="row">
+ <link rel="stylesheet" href="{% static 'css/update.css' %}">
+    <div class="row" id="div_dashboard">
         {% comment %} <div class="col-md-3 offset-md-3"> {% endcomment %}
         <div class="container">
             <h3>Update Recipe</h3>

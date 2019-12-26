@@ -1,0 +1,22 @@
+body{
+    background: url('plate.jpg') no-repeat;
+    background-size: cover;
+    font-family: sans-serif;
+    color: #3c3939;
+    background-color: #f1f1f1;
+}
+.profile-card{
+    width: 400px;
+    margin: auto;
+    background:#fff;
+    box-shadow: 0 4px  10px 0 rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+#div_dashboard{
+    background-color:rgb(92, 88, 40);
+}
+.image_div {
+    height: 200px;
+    width: 50%;
+    background-color: powderblue;
+  }

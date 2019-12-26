@@ -1,12 +1,13 @@
 {% extends "layout.html" %}
-
+{% load static %}
 {% block body %}
-
-
+    <link rel="stylesheet" href="{% static 'css/recipes.css' %}">
+    
     <div class = "row">
         <div class="col-md-10 offset-md-3">
             <div class="col-lg-8"> 
-                <h3>Recipes</h3>
+              <div class="container">
+                <h3 class="font-italic" id="recipes" style="margin-left:140px; font-size: 36pt; opacity: 0.6; ">Recipes</h3> </div>
                 <hr>
             </div>
         </div>
@@ -16,65 +17,113 @@
             <div class="col-lg-8">          
                 <form>
                     {% csrf_token %} 
-                <input type="text" name = "keyword" class="input-sm" maxlength="64" placeholder="Search...">
-                <button type="submit" class="btn btn-danger">Search</button>
+                <input type="text" name = "keyword" class="input-sm" maxlength="64" placeholder="Search..." style="height: 40px; width: 390px;">
+                <button type="submit" class="btn btn-danger" style="height: 40px;">Search</button>
                 </form>
             </div> 
         </div>           
     </div>
+    <hr>
+    <hr>
 
 
+
+        <!--recipe-->
+<div class="container">
+  
     {% if recipes %}
+    <div class="card-deck">
         {% for recipe in recipes %}
-                <div class="row">
-    <div class="col-md-10 offset-md-2">
-      <!-- Post Content Column -->
-      <div class="col-lg-8">
-
-        <!-- Title -->
-        <a href="/recipes/recipe/{{recipe.id}}"><h3 class="mt-4">{{recipe.title}}</h3></a>
-
-        <!-- Author -->
-        <p class="lead">
-          by
-            {{recipe.author.username}}
-        </p>
-
-        <hr>
-
-        <!-- Date/Time -->
-        <p>{{recipe.created_date}}</p>
-
-        <hr>
-
-        <!-- Preview Image -->
-        {% if recipe.recipe_image %}
-          <img class="img-fluid rounded" src="{{recipe.recipe_image.url}}" alt="">
-        {% else %}
-        {% endif %}
-        
+            <div class="col-4">
+            <div class="card" style="width: 18rem; height: 500px; margin-bottom: 30px;">
+              {% if recipe.recipe_image %}
+              <img class="img-fluid rounded" style="height: 300px; width: 300px;" src="{{recipe.recipe_image.url}}" alt="">
+            {% else %}
+            {% endif %}
             
+              <div class="card-body" style="margin-top: 5px;">
+                <a href="/recipes/recipe/{{recipe.id}}"><h3 class="mt-4" style="margin-top: -10px;">{{recipe.title}}</h3></a>
+                  <br>
+                    <!-- Author -->
+                  <p class="lead">
+                    by
+                      {{recipe.author.username}}
+                  </p>
 
-        <hr>
+                  <hr>
 
-        <!-- Post Content -->
-        <p class="lead">
-        
-            {{recipe.content|safe |truncatewords:10}}
-        </p>
-        
-     
-        <a style="float: right;" href="/recipes/recipe/{{recipe.id}}" class="btn btn-danger">Read More</a>
-        <hr>            
+                  <!-- Date/Time -->
+                  <p>{{recipe.created_date}}</p>
 
-          </div>
+                  <hr>
+                  <hr>
 
-        </div>
-    </div>
+                  <!-- Post Content -->
+              
+                              
+              </div> <a style="float: center;" href="/recipes/recipe/{{recipe.id}}" class="btn btn-info">Read More</a>
+            </div>
+            </div>
+
+            <br>
+            <br>
         {% endfor %}
+      </div>
     {% else %}
         <div class = "alert alert-danger">
             There is no recipe at this blog.
         </div>
     {% endif %}
+            </div>
 {% endblock body %}
+
+
+
+{% comment %} 
+            <div class="card">
+              <div class="card-body">
+                <a href="/recipes/recipe/{{recipe.id}}"><h3 class="mt-4">{{recipe.title}}</h3></a>
+                <p class="lead">
+                    by
+                      {{recipe.author.username}}
+                  </p>
+                  
+                  <p>{{recipe.created_date}}</p>
+                  <hr>
+              
+
+                  <!-- Preview Image -->
+                  {% if recipe.recipe_image %}
+                    <img class="img-fluid rounded" src="{{recipe.recipe_image.url}}" alt="">
+                  {% else %}
+                  {% endif %}
+                  
+                      
+          
+                  <hr>
+          
+                  <!-- Post Content -->
+                  <p class="lead">
+                  
+                      {{recipe.content|safe |truncatewords:10}}
+                  </p>
+                  <hr>
+               
+                  <a style="float: right;" href="/recipes/recipe/{{recipe.id}}" class="btn btn-danger">Read More</a>
+              </div>                
+          </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      
+    </div>
+    <div class="col-sm">
+      One of three columns
+    </div>
+    <div class="col-sm">
+      One of three columns
+    </div>
+  </div>
+</div>
+{% endcomment %}

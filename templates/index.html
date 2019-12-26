@@ -1,28 +1,37 @@
 {% extends "layout.html" %}
+{% load static %}
 
-{% block body %}
+{% block body %}    
 
-    <div class="jumbotron text-center">
-        <h3>Welcome to Recipegram</h3>
-        <p>This blog is for all people that like cooking</p>
-    </div>
-
-
-    <p>
-        {% if request.user.is_authenticated %}
-                It has been loged in. {{request.user.username}}
-        {% else %}
-                It has no been loged in.
-        {% endif %}
+  <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <title>Recipegram</title>
 
 
 
-    </p>
-{% comment %} 
-    {% for number in numbers %}
-        <li>{{number}}</li>
-    {% endfor %} {% endcomment %}
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,500,500i,700,800i">
+    <link rel="stylesheet" type="text/css" href="{% static 'static/index.css' %}"/>
 
 
+        <div class="container" id="mainindex.css">
+      <div class="jumbotron text-center" style="background:rgba(0, 0, 0, 0.3);">
+        <div class="opentext">
+          <h1 class="font-italic" style="color: white;">Bon Appétit</h1>
+          <br>
+          <h3 class="font-italic" style="color: white;">Join us and enjoy new recipes</h3>
+          <br>
+        
+        </div>
+      </div>
+    </div>    
+
+   <body>
+   
     
+   </body>
+   
 {% endblock body %}
+
+

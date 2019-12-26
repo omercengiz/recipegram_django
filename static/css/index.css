@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.wrapper{
+    width: 1170px;
+    margin: auto;
+}
+
+.welcome-text{
+    position: absolute;
+    width: 600px;
+    height: 300px;
+    margin: 20% 30%;
+    text-align: center;
+}
+body{
+    background: url('plate.jpg') no-repeat;
+    background-size: cover;
+    background-color: blanchedalmond;
+}

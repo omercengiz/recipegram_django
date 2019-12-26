@@ -1,0 +1,502 @@
+[1mdiff --git a/db.sqlite3 b/db.sqlite3[m
+[1mindex 3aeb7e1..3dd3ce3 100644[m
+Binary files a/db.sqlite3 and b/db.sqlite3 differ
+[1mdiff --git a/media/beefwellington.jfif b/media/beefwellington.jfif[m
+[1mdeleted file mode 100644[m
+[1mindex c42e75a..0000000[m
+Binary files a/media/beefwellington.jfif and /dev/null differ
+[1mdiff --git a/recipegram/__pycache__/urls.cpython-37.pyc b/recipegram/__pycache__/urls.cpython-37.pyc[m
+[1mindex 0144919..f9b4833 100644[m
+Binary files a/recipegram/__pycache__/urls.cpython-37.pyc and b/recipegram/__pycache__/urls.cpython-37.pyc differ
+[1mdiff --git a/templates/about.html b/templates/about.html[m
+[1mindex a5de83c..0391afe 100644[m
+[1m--- a/templates/about.html[m
+[1m+++ b/templates/about.html[m
+[36m@@ -1,21 +1,40 @@[m
+ {% extends "layout.html" %}[m
+[32m+[m[32m{% load static %}[m
+ [m
+ {% block body %}[m
+[31m-    <h3>About</h3>[m
+[31m-    <hr>[m
+[31m-    <p>Hello,Everyone!![m
+[31m-        This blog is created in 2019. We are here for you and your mouth-pleasing[m
+[31m-        Appetizing, inspiring, mouth-watering ... Not only recipes ... Feeding while laughing ...[m
+[32m+[m[41m    [m
+[32m+[m[32m    <link rel="stylesheet" href="{% static 'css/addrecipe.css' %}">[m
+ [m
+[31m-Yemek.com, to learn the Italian cuisine to make her lover happy, to leave the power to produce wine in the south, the most dreamed to open rice pilgrim in Cihangir, the only culinary skill menemen can boast, according to the location of the hotel to eat according to the hotel also, a giant souffle eaten that day to feel the need to pay attention to the food during the whole week, the taste of the food without tasting salt, Instagram'a to take photos of the site to afford to cool the food.[m
+[32m+[m[32m    <div class="row" id="div_dashboard">[m[41m [m
+[32m+[m[32m        <div class="col-md-10 offset-md-1">[m
+ [m
+[31m-Not only for those who want to feed themselves, but for those who pursue a pleasure.[m
+[32m+[m[32m            <h3 style="color: azure;">About</h3>[m
+[32m+[m[32m            <hr>[m
+[32m+[m[32m            <p style="color: azure;">Hello,Everyone!![m
+[32m+[m[32m                This blog is created in 2019. We are here for you and your mouth-pleasing[m
+[32m+[m[32m                Appetizing, inspiring, mouth-watering ... Not only recipes ... Feeding while laughing ...[m
+ [m
+[31m-With its ambitious team of different tastes and colors and many friendly and partners who contribute from outside, Yemek.com has set up a huge, long, colorful table and has a lot of chairs.[m
+[32m+[m[32m            Yemek.com, to learn the Italian cuisine to make her lover happy, to leave the power to produce wine in the south, the most dreamed to open rice pilgrim in Cihangir, the only culinary skill menemen can boast, according to the location of the hotel to eat according to the hotel also, a giant souffle eaten that day to feel the need to pay attention to the food during the whole week, the taste of the food without tasting salt, Instagram'a to take photos of the site to afford to cool the food.[m
+ [m
+[31m-You have a chair at this delicious table. Whether as a writer or as a reader.[m
+[32m+[m[32m            Not only for those who want to feed themselves, but for those who pursue a pleasure.[m
+ [m
+[31m-Good thing you came, come again.[m
+[32m+[m[32m            With its ambitious team of different tastes and colors and many friendly and partners who contribute from outside, Yemek.com has set up a huge, long, colorful table and has a lot of chairs.[m
+[32m+[m
+[32m+[m[32m            You have a chair at this delicious table. Whether as a writer or as a reader.[m
+[32m+[m
+[32m+[m[32m            Good thing you came, come again.[m
+[32m+[m
+[32m+[m[32m            Yours from us,[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m[32m        </div>[m
+[32m+[m[41m      [m
+[32m+[m[41m     [m
+[32m+[m
+[32m+[m[32m    </div>[m
+ [m
+[31m-Yours from us,[m
+ {% endblock body %} [m
+\ No newline at end of file[m
+[1mdiff --git a/templates/addrecipe.html b/templates/addrecipe.html[m
+[1mindex bf97a85..ac366c1 100644[m
+[1m--- a/templates/addrecipe.html[m
+[1m+++ b/templates/addrecipe.html[m
+[36m@@ -1,9 +1,12 @@[m
+ {% extends "layout.html" %}[m
+[31m-[m
+[32m+[m[32m{% load static %}[m
+ {% block body %}[m
+  [m
+ {% load crispy_forms_tags %}[m
+[31m-    <div class="row">[m
+[32m+[m
+[32m+[m[32m    <link rel="stylesheet" href="{% static 'css/addrecipe.css' %}">[m
+[32m+[m
+[32m+[m[32m    <div class="row" id="div_dashboard">[m
+ [m
+         <div class="col-md-10 offset-md-1">[m
+             <h3>Create Recipe</h3>[m
+[1mdiff --git a/templates/dashboard.html b/templates/dashboard.html[m
+[1mindex 1c85f57..88a696d 100644[m
+[1m--- a/templates/dashboard.html[m
+[1m+++ b/templates/dashboard.html[m
+[36m@@ -1,9 +1,25 @@[m
+ {% extends "layout.html" %}[m
+[31m-[m
+[32m+[m[32m{% load static %}[m
+ {% block body %}[m
+[31m-    <h3>Control Panel</h3>[m
+[32m+[m[32m    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">[m
+[32m+[m[32m    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">[m
+[32m+[m[32m    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">[m
+[32m+[m[32m    <body>[m[41m    [m
+[32m+[m[32m        <h3 style="color: azure;">Profile</h3>[m
+[32m+[m
+[32m+[m[32m        <div class="profile-card">[m
+[32m+[m[32m            <div class="image-container">[m
+[32m+[m[32m                <img src="/static/css/images/gordan.jpeg" id="image_div" style="width: 100%;">[m
+[32m+[m[32m                <div class="title">[m
+[32m+[m[32m                    <h2>Jone Doe</h2>[m
+[32m+[m[32m                </div>[m
+[32m+[m[32m            </div>[m
+[32m+[m[32m        </div>[m
+[32m+[m[32m    </body>[m
+[32m+[m
+[32m+[m[41m    [m
+     <hr>[m
+[31m-    <p>[m
+[32m+[m[32m    <p style="color: azure;">[m
+         Welcome, <small>{{request.user.username}}</small>[m
+     </p>[m
+ [m
+[36m@@ -44,5 +60,7 @@[m
+         </div>[m
+     {% endif %}[m
+ [m
+[31m-    [m
+[32m+[m[32m    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>[m
+[32m+[m[32m<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>[m
+[32m+[m[32m<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>[m
+ {% endblock body %}[m
+\ No newline at end of file[m
+[1mdiff --git a/templates/detail.html b/templates/detail.html[m
+[1mindex 7627c1e..52799c9 100644[m
+[1m--- a/templates/detail.html[m
+[1m+++ b/templates/detail.html[m
+[36m@@ -1,7 +1,8 @@[m
+ {% extends "layout.html" %}[m
+[31m-[m
+[32m+[m[32m{% load static %}[m
+ {% block body %}[m
+[31m-    <div class="row">[m
+[32m+[m[32m <link rel="stylesheet" href="{% static 'css/details.css' %}">[m
+[32m+[m[32m    <div class="row" id="div_dashboard">[m
+ [m
+       <!-- Post Content Column -->[m
+       <div class="col-lg-8">[m
+[1mdiff --git a/templates/includes/navbar.html b/templates/includes/navbar.html[m
+[1mindex 5f3a012..c88a923 100644[m
+[1m--- a/templates/includes/navbar.html[m
+[1m+++ b/templates/includes/navbar.html[m
+[36m@@ -9,9 +9,6 @@[m
+             <a class="nav-link" href="/recipes">Recipes[m
+               <span class="sr-only">(current)</span></a>[m
+             </li>[m
+[31m-            <li class="nav-item">[m
+[31m-              <a class="nav-link" href="#"></a>[m
+[31m-            </li>[m
+             <li class="nav-item">[m
+               <a class="nav-link" href="https://www.instagram.com/yemekcom/">Instagram</a>[m
+             </li>[m
+[1mdiff --git a/templates/includes/posttemplate.html b/templates/includes/posttemplate.html[m
+[1mindex 04b89e3..9dfdd10 100644[m
+[1m--- a/templates/includes/posttemplate.html[m
+[1m+++ b/templates/includes/posttemplate.html[m
+[36m@@ -155,4 +155,30 @@[m
+ [m
+       </div>[m
+ [m
+[31m-    </div>[m
+\ No newline at end of file[m
+[32m+[m[32m    </div>[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m[32m    {% comment %} <div class="jumbotron text-center" style="background-image: url('/../static/css/plate.jpg');">[m
+[32m+[m[32m        <h3 style="color: rgb(235, 233, 236);">Welcome to Recipegram</h3>[m
+[32m+[m[32m        <p style="color: rgb(235, 233, 236);">This blog is for all people that like cooking</p>[m
+[32m+[m[32m    </div> {% endcomment %}[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m[32m{% comment %}[m[41m [m
+[32m+[m[32m    {% for number in numbers %}[m
+[32m+[m[32m        <li>{{number}}</li>[m
+[32m+[m[32m    {% endfor %} {% endcomment %}[m
+[41m+[m
+[41m+[m
+[41m+[m
+[41m+[m
+[41m+[m
+[41m+[m
+[41m+[m
+[41m+[m
+[1mdiff --git a/templates/index.html b/templates/index.html[m
+[1mindex 0ab876a..d5e3486 100644[m
+[1m--- a/templates/index.html[m
+[1m+++ b/templates/index.html[m
+[36m@@ -1,28 +1,37 @@[m
+ {% extends "layout.html" %}[m
+[32m+[m[32m{% load static %}[m
+ [m
+[31m-{% block body %}[m
+[32m+[m[32m{% block body %}[m[41m    [m
+ [m
+[31m-    <div class="jumbotron text-center">[m
+[31m-        <h3>Welcome to Recipegram</h3>[m
+[31m-        <p>This blog is for all people that like cooking</p>[m
+[31m-    </div>[m
+[32m+[m[32m  <link rel="stylesheet" href="{% static 'css/index.css' %}">[m
+[32m+[m[32m    <title>Recipegram</title>[m
+ [m
+ [m
+[31m-    <p>[m
+[31m-        {% if request.user.is_authenticated %}[m
+[31m-                It has been loged in. {{request.user.username}}[m
+[31m-        {% else %}[m
+[31m-                It has no been loged in.[m
+[31m-        {% endif %}[m
+ [m
+ [m
+[32m+[m[32m    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>[m
+[32m+[m[32m    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">[m
+[32m+[m[32m    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,500,500i,700,800i">[m
+[32m+[m[32m    <link rel="stylesheet" type="text/css" href="{% static 'static/index.css' %}"/>[m
+ [m
+[31m-    </p>[m
+[31m-{% comment %} [m
+[31m-    {% for number in numbers %}[m
+[31m-        <li>{{number}}</li>[m
+[31m-    {% endfor %} {% endcomment %}[m
+ [m
+[32m+[m[32m        <div class="container" id="mainindex.css">[m
+[32m+[m[32m      <div class="jumbotron text-center" style="background:rgba(0, 0, 0, 0.3);">[m
+[32m+[m[32m        <div class="opentext">[m
+[32m+[m[32m          <h1 class="font-italic" style="color: white;">Bon Appétit</h1>[m
+[32m+[m[32m          <br>[m
+[32m+[m[32m          <h3 class="font-italic" style="color: white;">Join us and enjoy new recipes</h3>[m
+[32m+[m[32m          <br>[m
+[32m+[m[41m        [m
+[32m+[m[32m        </div>[m
+[32m+[m[32m      </div>[m
+[32m+[m[32m    </div>[m[41m    [m
+ [m
+[32m+[m[32m   <body>[m
+[32m+[m[41m   [m
+     [m
+[31m-{% endblock body %}[m
+\ No newline at end of file[m
+[32m+[m[32m   </body>[m
+[32m+[m[41m   [m
+[32m+[m[32m{% endblock body %}[m
+[41m+[m
+[41m+[m
+[1mdiff --git a/templates/login.html b/templates/login.html[m
+[1mindex eb6584f..6c8267e 100644[m
+[1m--- a/templates/login.html[m
+[1m+++ b/templates/login.html[m
+[36m@@ -1,12 +1,16 @@[m
+ {% extends "layout.html" %}[m
+[31m-[m
+[31m-{% block body %}[m
+[32m+[m[32m{% load static %}[m
+[32m+[m[32m{% block body %}[m[41m    [m
+[32m+[m[32m    <link rel="stylesheet" href="{% static 'css/login.css' %}">[m
+[32m+[m[32m    <body>[m
+[32m+[m[41m        [m
+[32m+[m[32m    </body>[m
+ {% load crispy_forms_tags %}[m
+[31m-    <div class="row">[m
+[32m+[m[32m    <div class="row" id="loginform">[m
+         <div class="col-md-3 offset-md-3">[m
+             <h3>Login</h3>[m
+             <hr>[m
+[31m-              <form method="post">[m
+[32m+[m[32m              <form method="post" id="form">[m
+         {% csrf_token %}[m
+         {{ form | crispy }}[m
+         <br>[m
+[1mdiff --git a/templates/recipes.html b/templates/recipes.html[m
+[1mindex 50c1e62..fb55534 100644[m
+[1m--- a/templates/recipes.html[m
+[1m+++ b/templates/recipes.html[m
+[36m@@ -1,12 +1,13 @@[m
+ {% extends "layout.html" %}[m
+[31m-[m
+[32m+[m[32m{% load static %}[m
+ {% block body %}[m
+[31m-[m
+[31m-[m
+[32m+[m[32m    <link rel="stylesheet" href="{% static 'css/recipes.css' %}">[m
+[32m+[m[41m    [m
+     <div class = "row">[m
+         <div class="col-md-10 offset-md-3">[m
+             <div class="col-lg-8"> [m
+[31m-                <h3>Recipes</h3>[m
+[32m+[m[32m              <div class="container">[m
+[32m+[m[32m                <h3 class="font-italic" id="recipes" style="margin-left:140px; font-size: 36pt; opacity: 0.6; ">Recipes</h3> </div>[m
+                 <hr>[m
+             </div>[m
+         </div>[m
+[36m@@ -16,65 +17,113 @@[m
+             <div class="col-lg-8">          [m
+                 <form>[m
+                     {% csrf_token %} [m
+[31m-                <input type="text" name = "keyword" class="input-sm" maxlength="64" placeholder="Search...">[m
+[31m-                <button type="submit" class="btn btn-danger">Search</button>[m
+[32m+[m[32m                <input type="text" name = "keyword" class="input-sm" maxlength="64" placeholder="Search..." style="height: 40px; width: 390px;">[m
+[32m+[m[32m                <button type="submit" class="btn btn-danger" style="height: 40px;">Search</button>[m
+                 </form>[m
+             </div> [m
+         </div>           [m
+     </div>[m
+[32m+[m[32m    <hr>[m
+[32m+[m[32m    <hr>[m
+ [m
+ [m
+[32m+[m
+[32m+[m[32m        <!--recipe-->[m
+[32m+[m[32m<div class="container">[m
+[32m+[m[41m  [m
+     {% if recipes %}[m
+[32m+[m[32m    <div class="card-deck">[m
+         {% for recipe in recipes %}[m
+[31m-                <div class="row">[m
+[31m-    <div class="col-md-10 offset-md-2">[m
+[31m-      <!-- Post Content Column -->[m
+[31m-      <div class="col-lg-8">[m
+[32m+[m[32m            <div class="col-4">[m
+[32m+[m[32m            <div class="card" style="width: 18rem; height: 500px; margin-bottom: 30px;">[m
+[32m+[m[32m              {% if recipe.recipe_image %}[m
+[32m+[m[32m              <img class="img-fluid rounded" style="height: 300px; width: 300px;" src="{{recipe.recipe_image.url}}" alt="">[m
+[32m+[m[32m            {% else %}[m
+[32m+[m[32m            {% endif %}[m
+[32m+[m[41m            [m
+[32m+[m[32m              <div class="card-body" style="margin-top: 5px;">[m
+[32m+[m[32m                <a href="/recipes/recipe/{{recipe.id}}"><h3 class="mt-4" style="margin-top: -10px;">{{recipe.title}}</h3></a>[m
+[32m+[m[32m                  <br>[m
+[32m+[m[32m                    <!-- Author -->[m
+[32m+[m[32m                  <p class="lead">[m
+[32m+[m[32m                    by[m
+[32m+[m[32m                      {{recipe.author.username}}[m
+[32m+[m[32m                  </p>[m
+ [m
+[31m-        <!-- Title -->[m
+[31m-        <a href="/recipes/recipe/{{recipe.id}}"><h3 class="mt-4">{{recipe.title}}</h3></a>[m
+[32m+[m[32m                  <hr>[m
+ [m
+[31m-        <!-- Author -->[m
+[31m-        <p class="lead">[m
+[31m-          by[m
+[31m-            {{recipe.author.username}}[m
+[31m-        </p>[m
+[32m+[m[32m                  <!-- Date/Time -->[m
+[32m+[m[32m                  <p>{{recipe.created_date}}</p>[m
+ [m
+[31m-        <hr>[m
+[32m+[m[32m                  <hr>[m
+[32m+[m[32m                  <hr>[m
+ [m
+[31m-        <!-- Date/Time -->[m
+[31m-        <p>{{recipe.created_date}}</p>[m
+[32m+[m[32m                  <!-- Post Content -->[m
+[32m+[m[41m              [m
+[32m+[m[41m                              [m
+[32m+[m[32m              </div> <a style="float: center;" href="/recipes/recipe/{{recipe.id}}" class="btn btn-info">Read More</a>[m
+[32m+[m[32m            </div>[m
+[32m+[m[32m            </div>[m
+ [m
+[31m-        <hr>[m
+[32m+[m[32m            <br>[m
+[32m+[m[32m            <br>[m
+[32m+[m[32m        {% endfor %}[m
+[32m+[m[32m      </div>[m
+[32m+[m[32m    {% else %}[m
+[32m+[m[32m        <div class = "alert alert-danger">[m
+[32m+[m[32m            There is no recipe at this blog.[m
+[32m+[m[32m        </div>[m
+[32m+[m[32m    {% endif %}[m
+[32m+[m[32m            </div>[m
+[32m+[m[32m{% endblock body %}[m
+ [m
+[31m-        <!-- Preview Image -->[m
+[31m-        {% if recipe.recipe_image %}[m
+[31m-          <img class="img-fluid rounded" src="{{recipe.recipe_image.url}}" alt="">[m
+[31m-        {% else %}[m
+[31m-        {% endif %}[m
+[31m-        [m
+[31m-            [m
+ [m
+[31m-        <hr>[m
+ [m
+[31m-        <!-- Post Content -->[m
+[31m-        <p class="lead">[m
+[31m-        [m
+[31m-            {{recipe.content|safe |truncatewords:10}}[m
+[31m-        </p>[m
+[31m-        [m
+[31m-     [m
+[31m-        <a style="float: right;" href="/recipes/recipe/{{recipe.id}}" class="btn btn-danger">Read More</a>[m
+[31m-        <hr>            [m
+[32m+[m[32m{% comment %}[m[41m [m
+[32m+[m[32m            <div class="card">[m
+[32m+[m[32m              <div class="card-body">[m
+[32m+[m[32m                <a href="/recipes/recipe/{{recipe.id}}"><h3 class="mt-4">{{recipe.title}}</h3></a>[m
+[32m+[m[32m                <p class="lead">[m
+[32m+[m[32m                    by[m
+[32m+[m[32m                      {{recipe.author.username}}[m
+[32m+[m[32m                  </p>[m
+[32m+[m[41m                  [m
+[32m+[m[32m                  <p>{{recipe.created_date}}</p>[m
+[32m+[m[32m                  <hr>[m
+[32m+[m[41m              [m
+ [m
+[32m+[m[32m                  <!-- Preview Image -->[m
+[32m+[m[32m                  {% if recipe.recipe_image %}[m
+[32m+[m[32m                    <img class="img-fluid rounded" src="{{recipe.recipe_image.url}}" alt="">[m
+[32m+[m[32m                  {% else %}[m
+[32m+[m[32m                  {% endif %}[m
+[32m+[m[41m                  [m
+[32m+[m[41m                      [m
+[32m+[m[41m          [m
+[32m+[m[32m                  <hr>[m
+[32m+[m[41m          [m
+[32m+[m[32m                  <!-- Post Content -->[m
+[32m+[m[32m                  <p class="lead">[m
+[32m+[m[41m                  [m
+[32m+[m[32m                      {{recipe.content|safe |truncatewords:10}}[m
+[32m+[m[32m                  </p>[m
+[32m+[m[32m                  <hr>[m
+[32m+[m[41m               [m
+[32m+[m[32m                  <a style="float: right;" href="/recipes/recipe/{{recipe.id}}" class="btn btn-danger">Read More</a>[m
+[32m+[m[32m              </div>[m[41m                [m
+           </div>[m
+ [m
+[31m-        </div>[m
+[32m+[m[32m<div class="container">[m
+[32m+[m[32m  <div class="row">[m
+[32m+[m[32m    <div class="col-sm">[m
+[32m+[m[41m      [m
+     </div>[m
+[31m-        {% endfor %}[m
+[31m-    {% else %}[m
+[31m-        <div class = "alert alert-danger">[m
+[31m-            There is no recipe at this blog.[m
+[31m-        </div>[m
+[31m-    {% endif %}[m
+[31m-{% endblock body %}[m
+\ No newline at end of file[m
+[32m+[m[32m    <div class="col-sm">[m
+[32m+[m[32m      One of three columns[m
+[32m+[m[32m    </div>[m
+[32m+[m[32m    <div class="col-sm">[m
+[32m+[m[32m      One of three columns[m
+[32m+[m[32m    </div>[m
+[32m+[m[32m  </div>[m
+[32m+[m[32m</div>[m
+[32m+[m[32m{% endcomment %}[m
+\ No newline at end of file[m
+[1mdiff --git a/templates/register.html b/templates/register.html[m
+[1mindex abd7d10..b5eafd1 100644[m
+[1m--- a/templates/register.html[m
+[1m+++ b/templates/register.html[m
+[36m@@ -1,13 +1,17 @@[m
+ {% extends "layout.html" %}[m
+[31m-[m
+[32m+[m[32m{% load static %}[m
+ {% block body %}[m
+[32m+[m[32m<link rel="stylesheet" href="{% static 'css/register.css' %}">[m
+[32m+[m[32m        <body>[m
+[32m+[m[41m  [m
+[32m+[m[32m        </body>[m
+ {% load crispy_forms_tags %}[m
+ [m
+[31m-<div class="row">[m
+[32m+[m[32m<div class="row" id="registerform">[m
+         <div class="col-md-3 offset-md-3">[m
+                 <h3>Register</h3>[m
+                 <hr>[m
+[31m-              <form method="post">[m
+[32m+[m[32m              <form method="post" id="form">[m
+         {% csrf_token %}[m
+         {{ form | crispy }}[m
+         <br>[m
+[1mdiff --git a/templates/update.html b/templates/update.html[m
+[1mindex f241aab..5664c72 100644[m
+[1m--- a/templates/update.html[m
+[1m+++ b/templates/update.html[m
+[36m@@ -1,9 +1,10 @@[m
+ {% extends "layout.html" %}[m
+[31m-[m
+[32m+[m[32m{% load static %}[m
+ {% block body %}[m
+  [m
+ {% load crispy_forms_tags %}[m
+[31m-    <div class="row">[m
+[32m+[m[32m <link rel="stylesheet" href="{% static 'css/update.css' %}">[m
+[32m+[m[32m    <div class="row" id="div_dashboard">[m
+         {% comment %} <div class="col-md-3 offset-md-3"> {% endcomment %}[m
+         <div class="container">[m
+             <h3>Update Recipe</h3>[m
